@@ -2,7 +2,7 @@ import './App.css'
 import {products} from "./data/productsList.ts";
 import {IProduct} from "./modules/product.ts";
 import MyProduct from "./components/my-product/MyProduct.tsx";
-//branch lesson 1
+//branch lesson 2
 function App() {
 
   return (
