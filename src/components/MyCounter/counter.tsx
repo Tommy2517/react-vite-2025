@@ -1,7 +1,7 @@
 import {useState} from 'react';
 
 const Counter = () => {
-    let [counter, setCounter]:number = useState(0)
+    let [counter, setCounter]= useState<number>(0)
     return (
         <div>
             <button onClick={()=>{
