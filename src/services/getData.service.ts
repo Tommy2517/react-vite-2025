@@ -1,1 +1,0 @@
-fetch(env.module.exports)
