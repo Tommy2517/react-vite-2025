@@ -1,17 +1,20 @@
 import './App.css'
 import TodoComponents from "./components/todos/TodoComponents/TodoComponents.tsx";
+import ContentComponent from "./components/ContentComponent/ContentComponent.tsx";
+import HeaderComponent from "./components/HeaderComponent/HeaderComponent.tsx";
+import {useState} from "react";
 
 function App() {
-
-  return (
-    <>
-      {/*https://jsonplaceholder.typicode.com/todos - тут масив даних. ознайомтесь з ним для початку*/}
-      {/*Створити компонент TodoComponent який буде містити інформацію про окремий об'єкт з масиву.*/}
-      {/*Створити компонент TodoComponents в якому відбувається ітерація масиву даних отриманих з апі.*/}
-      {/*Кореневим компонентом є App*/}
-      <TodoComponents/>
-    </>
-  )
+    const [showTodoComponent, setShowTodoComponent] = useState(false)
+    const toggle = () => {
+        setShowTodoComponent(!showTodoComponent)
+    }
+    return (
+        <>
+            {<HeaderComponent onToggle={toggle}/>}
+            {<ContentComponent showTodoComponent={showTodoComponent}/>}
+        </>
+    )
 }
 
 export default App
