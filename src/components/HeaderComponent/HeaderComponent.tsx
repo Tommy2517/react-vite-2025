@@ -20,7 +20,9 @@ const HeaderComponent:FC<HeaderPropType> = ({onToggle}) => {
                         'hover:text-gray-700 font-medium rounded transition-all duration-300'}>
                     Dummy JSON Todos
                 </button>
+
             </nav>
+
         </header>
     );
 };
