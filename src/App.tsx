@@ -5,13 +5,15 @@ import {useState} from "react";
 
 function App() {
     const [showTodoComponent, setShowTodoComponent] = useState(false)
-    const toggle = () => {
+    const [buttonName, setButtonName] = useState<string>('')
+    const toggle = (buttonName:string) => {
         setShowTodoComponent(!showTodoComponent)
+        setButtonName(buttonName)
     }
     return (
         <>
             {<HeaderComponent onToggle={toggle}/>}
-            {<ContentComponent showTodoComponent={showTodoComponent}/>}
+            {<ContentComponent showTodoComponent={showTodoComponent} buttonName={buttonName}/>}
         </>
     )
 }
