@@ -1,10 +1,10 @@
 import {FC} from 'react';
-import {IPlaceholderTodo} from "../../../models/IPlaceholderTodo";
+import {IPlaceholderTodo} from "../../../../models/IPlaceholderTodo.ts";
 
 type TodoPropType = {
     todo: IPlaceholderTodo;
 }
-const TodoComponent: FC<TodoPropType> = ({todo}) => {
+const PlaceholderComponent: FC<TodoPropType> = ({todo}) => {
     return (
         <div className={"bg-gray-100 flex-grow text-black border-l-8 border-green-500 rounded-md px-3 py-2 w-full md:w-5/12 lg:w-3/12"}>
             <div>task - {todo.title}</div>
@@ -16,4 +16,4 @@ const TodoComponent: FC<TodoPropType> = ({todo}) => {
     );
 };
 
-export default TodoComponent;
+export default PlaceholderComponent;
