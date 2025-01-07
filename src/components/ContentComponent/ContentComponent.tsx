@@ -1,5 +1,5 @@
 import {FC} from 'react';
-import PlaceholderComponents from "../todos/PlaceholderComponents/TodoComponents/PlaceholderComponents.tsx";
+import DummyComponents from "../APIsComponents/DummyComponents/TodoComponents/DummyComponents.tsx";
 
 type ContentPropType = {
     showTodoComponent:boolean;
@@ -8,7 +8,7 @@ const ContentComponent:FC<ContentPropType> = ({showTodoComponent}) => {
 
     return (
         <div>
-            {showTodoComponent && <PlaceholderComponents/>}
+            {showTodoComponent && <DummyComponents/>}
         </div>
     );
 };

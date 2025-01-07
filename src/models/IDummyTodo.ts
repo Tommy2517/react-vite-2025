@@ -4,7 +4,7 @@ export interface IDummyTodo {
 	skip: number;
 	limit: number;
 }
-interface IDummyTodoTodos {
+export interface IDummyTodoTodos {
 	id: number;
 	todo: string;
 	completed: boolean;

@@ -13,9 +13,7 @@ const HeaderComponent:FC<HeaderPropType> = ({onToggle}) => {
                     JSON Placeholder Todos
                 </button>
                 <button
-                    onClick={() => {
-
-                    }}
+                    onClick={onToggle}
                     className={
                         'px-4 py-2 bg-gray-400 text-gray-200 ' +
                         'hover:bg-gray-200 ' +
