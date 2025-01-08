@@ -7,8 +7,6 @@ function App() {
     const [showTodoComponent, setShowTodoComponent] = useState(false)
     const [buttonName, setButtonName] = useState<string>('')
     const toggle = (ChooseButtonName: string) => {
-
-
         //1 первое нажатие
         if (!buttonName) {
             setShowTodoComponent(!showTodoComponent)

@@ -6,7 +6,7 @@ type TodoPropType = {
     todo: IPlaceholderTodo;
 }
 const PlaceholderComponent: FC<TodoPropType> = ({todo}) => {
-    const [complete,setComplete] = useState(false)
+    const [complete,setComplete] = useState(todo.completed)
     const isCompleted = () => {
         setComplete(!complete)
     }
