@@ -1,9 +1,9 @@
 import {useEffect, useState} from "react";
 import {getTodoDataDummy} from "../../../../services/api.service.ts";
-import {IDummyTodo} from "../../../../models/IDummyTodo.ts";
+import {IDummyTodos} from "../../../../models/IDummyTodos.ts";
 
 export const useDummyListTodos = () => {
-    const [todos, setTodos] = useState<IDummyTodo | null>(null)
+    const [todos, setTodos] = useState<IDummyTodos | null>(null)
 
     useEffect(()=>{
         getTodoDataDummy()

@@ -1,9 +1,9 @@
 import {useEffect, useState} from "react";
-import {IPlaceholderTodo} from "../../../../models/IPlaceholderTodo.ts";
+import {ITodo} from "../../../../models/ITodo.ts";
 import {getTodoDataPlaceholder} from "../../../../services/api.service.ts";
 
 export const usePlaceholderListTodos = () => {
-    const [todos, setTodos] = useState<IPlaceholderTodo[] | null>(null)
+    const [todos, setTodos] = useState<ITodo[] | null>(null)
     useEffect(()=>{
         getTodoDataPlaceholder()
             .then(response => setTodos(response))

@@ -1,9 +1,9 @@
 import {FC, useState} from 'react';
-import {IPlaceholderTodo} from "../../../../models/IPlaceholderTodo.ts";
+import {ITodo} from "../../../../models/ITodo.ts";
 import '../../stylesComponent/TodoComponent.css'
 
 type TodoPropType = {
-    todo: IPlaceholderTodo;
+    todo: ITodo;
 }
 const PlaceholderComponent: FC<TodoPropType> = ({todo}) => {
     const [complete,setComplete] = useState(todo.completed)

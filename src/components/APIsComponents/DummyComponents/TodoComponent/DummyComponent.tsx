@@ -1,9 +1,9 @@
 import {FC, useState} from 'react';
-import {IDummyTodoTodos} from "../../../../models/IDummyTodo.ts";
+import {IDummyTodo} from "../../../../models/IDummyTodos.ts";
 import '../../stylesComponent/TodoComponent.css'
 
 type TodoPropType = {
-    todo: IDummyTodoTodos;
+    todo: IDummyTodo;
 }
 const DummyComponent: FC<TodoPropType> = ({todo}) => {
     const [complete, setComplete] = useState(todo.completed)
