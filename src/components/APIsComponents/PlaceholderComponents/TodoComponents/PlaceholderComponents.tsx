@@ -1,15 +1,9 @@
-import {useEffect, useState} from 'react';
-import {getTodoDataPlaceholder} from "../../../../services/api.service.ts";
-import {IPlaceholderTodo} from "../../../../models/IPlaceholderTodo.ts";
 import PlaceholderComponent from "../TodoComponent/PlaceholderComponent.tsx";
+import {usePlaceholderListTodos} from "./usePlaceholderListTodos.ts";
 
 const PlaceholderComponents = () => {
-    const [todos, setTodos] = useState<IPlaceholderTodo[] | null>(null)
+    const {todos} = usePlaceholderListTodos()
 
-    useEffect(()=>{
-        getTodoDataPlaceholder()
-            .then(response => setTodos(response))
-    },[])
     if(!todos) return <div>loaging...</div>
 
     return (

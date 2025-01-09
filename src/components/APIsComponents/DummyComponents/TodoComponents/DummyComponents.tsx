@@ -1,15 +1,8 @@
-import {useEffect, useState} from 'react';
-import {getTodoDataDummy} from "../../../../services/api.service.ts";
-import {IDummyTodo} from "../../../../models/IDummyTodo.ts";
 import DummyComponent from "../TodoComponent/DummyComponent.tsx";
+import {useDummyListTodos} from "./useDummyListTodos.ts";
 
 const DummyComponents = () => {
-    const [todos, setTodos] = useState<IDummyTodo | null>(null)
-
-    useEffect(()=>{
-        getTodoDataDummy()
-            .then(response => setTodos(response))
-    },[])
+const {todos} = useDummyListTodos()
     if(!todos) return <div>loaging...</div>
 
     return (
