@@ -5,8 +5,8 @@ const Menu = () => {
         <div>
             <ul>
                 <li><Link to={'/'}>HomePage</Link></li>
-                <li><Link to={'/a'}>link a</Link></li>
-                <li><Link to={'/b'}>link b</Link></li>
+                <li><Link to={'/users'}>link a</Link></li>
+                <li><Link to={'/posts'}>link b</Link></li>
             </ul>
         </div>
     );

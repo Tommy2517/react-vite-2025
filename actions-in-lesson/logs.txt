@@ -1,8 +1,1 @@
-1. install react-router-dom
-2. router = createBrowserRouter = ([...PATHS{}])
-3. main.tsx .render(<RouterProvider router={}/>)
-4. /layouts/mainlayout.tsx
-5. <router{path:<mainLayout
-6. children
-7. Link
-8. Outlet
+1. path:'' = index:true одно и то же для роутов
