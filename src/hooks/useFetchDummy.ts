@@ -7,19 +7,22 @@ import {IPost} from "../models/IPost.ts";
 export const useFetchDummy = (path) => {
     const [users, setUsers] = useState<IUser[]>([])
     const [posts, setPosts] = useState<IPost[]>([])
+
     if (path === 'users') {
         useEffect(() => {
             getAll<IBaseResponseModel & { users: IUser[] }>(path)
                 .then(({users}) => setUsers(users))
         }, [])
-    return {users}
+        return {users}
     }
-    if (path === 'posts'){
+
+    if (path === 'posts') {
         useEffect(() => {
             getAll<IBaseResponseModel & { posts: IPost[] }>(path)
                 .then(({posts}) => setPosts(posts))
         }, [])
-    return {posts}
+        return {posts}
     }
 };
 
+//
