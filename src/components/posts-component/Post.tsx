@@ -2,11 +2,11 @@ import {IPost} from "../../models/IPost.ts";
 import {FC} from "react";
 
 type PostPropType = {
-  post:IPost
+    post: IPost
 }
-const Post:FC<PostPropType> = ({post}) => {
+const Post: FC<PostPropType> = ({post}) => {
     return (
-        <div>
+        <div className={'bg-green-500 w-1/2 m-5 p-2 text-center'}>
             {post.title}
         </div>
     );
