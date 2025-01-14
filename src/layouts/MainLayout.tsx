@@ -2,8 +2,8 @@ import {Outlet} from "react-router";
 import MenuComponent from "../components/MenuComponent/MenuComponent.tsx";
 
 export const MainLayout = () => {
-    return <>
+    return <div>
         <MenuComponent/>
         <Outlet/>
-    </>;
+    </div>;
 }

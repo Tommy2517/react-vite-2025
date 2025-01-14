@@ -2,7 +2,7 @@ import Posts from "../components/posts-component/Posts.tsx";
 
 const PostsPage = () => {
     return (
-        <div>
+        <div className={'flex justify-center'}>
             <Posts/>
         </div>
     );

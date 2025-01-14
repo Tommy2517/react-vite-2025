@@ -6,7 +6,7 @@ type PostPropType = {
 }
 const Post: FC<PostPropType> = ({post}) => {
     return (
-        <div className={'bg-green-500 w-1/2 m-5 p-2 text-center'}>
+        <div className={'bg-green-500 m-5 p-2 text-center'}>
             {post.title}
         </div>
     );

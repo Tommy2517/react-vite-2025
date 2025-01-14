@@ -6,7 +6,7 @@ type UserPropType = {
 }
 const User:FC<UserPropType> = ({user}) => {
     return (
-        <div className={'bg-blue-500 w-1/2 m-5 p-2 text-center'}>
+        <div className={'bg-blue-500 m-5 p-2 text-center'}>
             {user.email}
         </div>
     );
