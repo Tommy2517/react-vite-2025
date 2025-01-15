@@ -1,12 +1,14 @@
 import {IUser} from "../../models/IUser.ts";
 import User from "./User.tsx";
-import {useFetchDummy} from "../../hooks/useFetchDummy.ts";
+import useFetchDummy from "../../hooks/useFetchDummy.ts";
+import {IBaseResponseModel} from "../../models/IBaseResponseModel.ts";
+
 const Users = () => {
-    const {users} = useFetchDummy('users')
+    const {data} = useFetchDummy<IBaseResponseModel & { users: IUser[] }>('users')
 
     return (
         <div>
-            {users.map((user: IUser) => <User key={user.id} user={user} />)}
+            {data?.users.map((user: IUser) => <User key={user.id} user={user}/>)}
         </div>
     );
 };
