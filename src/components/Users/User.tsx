@@ -10,17 +10,17 @@ const User: FC<Prop> = ({user}) => {
     const navigate = useNavigate();
 
     const onClickButtonNavigate = () => {
-        navigate('' + user.id + '/carts')
+        navigate(user.id + '/carts')
     }
     return (
         <div className={'flex'}>
-            <div className={'m-5 p-1 text-white bg-teal-700 w-10'}>
+            <div className={'m-5 p-1 text-white bg-teal-700 w-10 flex items-center justify-center'}>
                 {user.id }
             </div>
-            <div className={'m-5 p-1 text-white bg-teal-700 w-36'}>
+            <div className={'m-5 p-1 text-white bg-teal-700 w-36 flex items-center justify-center'}>
                 {user.firstName}
             </div>
-                <button className={'text-white bg-teal-700 w-36 h-10 m-5'} onClick={onClickButtonNavigate}>more</button>
+                <button className={'text-white bg-teal-700 w-36 h-10 m-5'} onClick={onClickButtonNavigate}>carts</button>
         </div>
     );
 };
