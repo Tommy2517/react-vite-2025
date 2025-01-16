@@ -8,7 +8,7 @@ import {getAll} from "../services/api.service.ts";
         useEffect(() => {
             getAll<T>(path)
                 .then((data) => setData(data))
-        }, [path])
+        }, [])
         return {data}
 };
 

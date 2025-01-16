@@ -5,7 +5,6 @@ import {IBaseResponseModel} from "../../models/IBaseResponseModel.ts";
 
 const Users = () => {
     const {data} = useFetchDummy<IBaseResponseModel & { users: IUser[] }>('users')
-
     return (
         <div>
             {data?.users.map((user: IUser) => <User key={user.id} user={user}/>)}

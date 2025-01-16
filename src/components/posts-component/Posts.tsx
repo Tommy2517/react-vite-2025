@@ -5,7 +5,6 @@ import {IBaseResponseModel} from "../../models/IBaseResponseModel.ts";
 
 const Posts = () => {
     const {data} = useFetchDummy<IBaseResponseModel & { posts: IPost[] }>('posts')
-
     return (
         <div>
             {data?.posts.map(post => <Post key={post.id} post={post}/>)}
