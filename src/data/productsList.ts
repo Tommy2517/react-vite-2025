@@ -1,4 +1,4 @@
-import {IProduct} from "../modules/product.ts";
+import {IProduct} from "../models/product.ts";
 
 export const products:IProduct[] = [
     {

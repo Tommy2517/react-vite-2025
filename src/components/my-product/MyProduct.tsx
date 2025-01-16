@@ -1,5 +1,5 @@
 import {FC} from 'react';
-import {IProduct} from "../../modules/product.ts";
+import {IProduct} from "../../models/product.ts";
 
 type MyPropsType ={
     product:IProduct
