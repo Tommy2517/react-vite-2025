@@ -1,7 +1,9 @@
+import {UserPostComponent} from "../components/UsersComponent/UserPostComponent.tsx";
+
 export const UserPostPage = () => {
     return (
         <div>
-            hello
+            <UserPostComponent/>
         </div>
     );
 };
