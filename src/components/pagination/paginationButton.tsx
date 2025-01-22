@@ -4,7 +4,7 @@ type prop = {
     total_pages:number
 }
 const PaginationButtons:FC<prop> = ({total_pages}) => {
-    const [isDisabledPrev, setIsDisabledPrev] = useState<boolean>(false)
+    const [isDisabledPrev, setIsDisabledPrev] = useState<boolean>(true)
     const [isDisabledNext, setIsDisabledNext] = useState<boolean>(false)
     const [query, setQuery] = useSearchParams({page: '1'});
 
