@@ -4,7 +4,7 @@ import {FC} from "react";
 type Prop = {
     user:IUser
 }
-const User:FC<Prop> = ({user}) => {
+const UserReqRes:FC<Prop> = ({user}) => {
     return (
         <div className={'border-2'}>
             <div>{user.first_name}</div>
@@ -13,4 +13,4 @@ const User:FC<Prop> = ({user}) => {
     );
 };
 
-export default User;
+export default UserReqRes;

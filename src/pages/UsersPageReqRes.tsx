@@ -1,15 +1,15 @@
 import {Link} from "react-router-dom";
 import {AppRoutes} from "../routes/constants.ts";
-import Users from "../components/Users/Users.tsx";
+import UsersReqRes from "../components/UsersReqRes/UsersReqRes.tsx";
 
-const UsersPage = () => {
+const UsersPageReqRes = () => {
     return (
         <div>
-            <Users/>
+            <UsersReqRes/>
             <br/>
             <Link to={AppRoutes.root}>back</Link>
         </div>
     );
 };
 
-export default UsersPage;
+export default UsersPageReqRes;

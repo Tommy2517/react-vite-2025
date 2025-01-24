@@ -6,7 +6,8 @@ const HomePage = () => {
         <div>
             <Outlet/>
             <br/>
-            <Link to={AppRoutes.users}> users</Link>
+            <Link to={AppRoutes.usersReqRes}> users from ReqRes</Link>
+            <Link to={AppRoutes.usersDummy}> users from Dummy</Link>
         </div>
     );
 };
