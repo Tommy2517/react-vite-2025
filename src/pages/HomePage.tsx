@@ -1,10 +1,10 @@
-import {Link} from "react-router-dom";
+import {Link, Outlet} from "react-router-dom";
 import {AppRoutes} from "../routes/constants.ts";
 
 const HomePage = () => {
     return (
         <div>
-            Home
+            <Outlet/>
             <br/>
             <Link to={AppRoutes.users}> users</Link>
         </div>

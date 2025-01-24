@@ -1,9 +1,10 @@
 import User from "./User.tsx";
 import {useFetchData} from "./useFetchData.ts";
 import PaginationButtons from "../pagination/paginationButton.tsx";
+import {AppRoutes} from "../../routes/constants.ts";
 
 const Users = () => {
-    const {users} = useFetchData()
+    const {users} = useFetchData(AppRoutes.users + AppRoutes.page)
     if (!users) return <div>loading</div>
 
     return (

@@ -1,4 +1,5 @@
 export const AppRoutes = {
     root: '/',
-    users: '/users'
+    users: '/users',
+    page: '?page='
 }
