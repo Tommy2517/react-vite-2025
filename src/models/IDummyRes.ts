@@ -1,5 +1,7 @@
+import {IUser} from "./IUser.ts";
+
 export interface IDummyRes {
-	users: Users[];
+	users: IUser[];
 	total: number;
 	skip: number;
 	limit: number;
