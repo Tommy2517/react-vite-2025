@@ -1,5 +1,12 @@
-import {createRoot} from 'react-dom/client'
 import './index.css'
-import App from './App.tsx'
+import {createRoot} from "react-dom/client";
+import {BrowserRouter} from "react-router-dom";
+import App from "./App.tsx";
+import {AppRoutes} from "./router/constants.ts";
 
-createRoot(document.getElementById('root')!).render(<App/>)
+const root = createRoot(document.getElementById('root') as HTMLElement);
+root.render(
+    <BrowserRouter basename={AppRoutes.root}>
+        <App/>
+    </BrowserRouter>
+)
