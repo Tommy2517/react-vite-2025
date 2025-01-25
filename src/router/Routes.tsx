@@ -1,6 +1,7 @@
 import {useRoutes} from "react-router-dom";
 import {AppRoutes} from "./constants.ts";
 import {lazy, Suspense} from "react";
+import PaginationPage from "../pages/PaginationPage.tsx";
 
 const Home = lazy(() => import('../pages/HomePage.tsx'))
 const Users = lazy(() => import('../pages/UsersPage.tsx'))
@@ -15,13 +16,20 @@ const RoutesComponent = () =>
             path: AppRoutes.root,
             children:[
                 {
-                    element: (
-                        <Suspense>
-                            <Users/>
-                        </Suspense>
-                    ),
-                    path: AppRoutes.users
-                }
+                    element:<PaginationPage/>,
+                    path:'',
+                    children:[
+                        {
+                            element: (
+                                <Suspense>
+                                    <Users/>
+                                </Suspense>
+                            ),
+                            path: AppRoutes.users
+                        }
+                    ]
+                },
+
             ]
         },
         {
