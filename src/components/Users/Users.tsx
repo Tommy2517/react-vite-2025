@@ -1,6 +1,7 @@
 import {IDummyRes} from "../../models/IDummyRes.ts";
 import {useDummyFetch} from "../../hooks/useDummyFetch.ts";
 import {useOutletContext} from "react-router-dom";
+import User from "./User.tsx";
 
 const Users = () => {
     const {setTotalPages} = useOutletContext();
@@ -9,7 +10,7 @@ const Users = () => {
     if (error) return <div>{error}</div>
     return (
         <div>
-            {users.map(user => <div key={user.id}>{user.firstName}</div>)}
+            {users.map(user => <User key={user.id} user={user}/>)}
         </div>
     );
 };
