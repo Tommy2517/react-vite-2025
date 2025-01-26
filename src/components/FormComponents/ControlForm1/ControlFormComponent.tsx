@@ -4,7 +4,7 @@ interface IFormProps {
     username: string,
     password: string,
 }
-const FormComponent = () => {
+const ControlFormComponent = () => {
 
     const [formState, setFormState] = useState<IFormProps>(
         {
@@ -56,4 +56,4 @@ const FormComponent = () => {
     );
 };
 
-export default FormComponent;
+export default ControlFormComponent;
