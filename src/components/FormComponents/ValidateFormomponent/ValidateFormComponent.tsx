@@ -7,7 +7,7 @@ interface IFormProps {
 }
 
 const ValidateFormComponent = () => {
-    const {handleSubmit, register, formState: {errors, isValid}} = useForm<IFormProps>()
+    const {handleSubmit, register, formState: {errors, isValid}} = useForm<IFormProps>({mode:"all"})
 
     const customHandler = (formDataProps: IFormProps) => {
         console.log(formDataProps)
@@ -22,8 +22,7 @@ const ValidateFormComponent = () => {
                     {errors.username && <div>{errors.username.message}</div>}
                 </label>
 
-                <label><input type="text" {...register('password',
-                    {
+                <label><input type="text" {...register('password', {
                         required: true,
                         minLength: {value: 3, message: 'pass too short'},
                         maxLength: {value: 6, message: 'pass too long'},
