@@ -3,6 +3,7 @@ import ControlFormComponent from "./components/FormComponents/ControlForm1/Contr
 import RegisterFormComponent from "./components/FormComponents/RegisterFormComponent/RegisterFormComponent.tsx";
 import ValidateFormComponent from "./components/FormComponents/ValidateFormomponent/ValidateFormComponent.tsx";
 import ValidateFormWithJoi from "./components/FormComponents/ValidateFormWithJoi/ValidateFormWithJoi.tsx";
+import AxiosUsersComponent from "./components/axiosResponseComponent/AxiosUsersComponent.tsx";
 
 function App() {
 
@@ -11,7 +12,8 @@ function App() {
         {/*<ControlFormComponent/>*/}
         {/*<RegisterFormComponent/>*/}
         {/*<ValidateFormComponent/>*/}
-        <ValidateFormWithJoi/>
+        {/*<ValidateFormWithJoi/>*/}
+        <AxiosUsersComponent/>
     </>
   )
 }
