@@ -1,5 +1,6 @@
 export const AppRoutes = {
     root:'/',
     cars:'/cars',
-    carForm:'/create'
+    carCreate:'/create',
+    carById:'/carId'
 }

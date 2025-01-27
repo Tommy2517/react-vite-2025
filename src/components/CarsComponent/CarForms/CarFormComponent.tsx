@@ -1,12 +1,12 @@
 import {useForm} from "react-hook-form";
 import {joiResolver} from "@hookform/resolvers/joi";
 import "./CarFormStyles.css"
-import {carValidator} from "../../validators/car.validator.ts";
-import {createCar} from "../../services/car.service.ts";
+import {createCarValidator} from "../../../validators/create.car.validator.ts";
+import {createCar} from "../../../services/car.service.ts";
 
 const CarFormComponent = () => {
     const {handleSubmit, register, formState: {isValid, errors}}
-        = useForm<ICar>({mode: "all", resolver: joiResolver(carValidator)});
+        = useForm<ICar>({mode: "all", resolver: joiResolver(createCarValidator)});
     const submitHandler = (formDataProps: ICar) => {
         createCar<ICar>(formDataProps).then(data => console.log(data))
     }

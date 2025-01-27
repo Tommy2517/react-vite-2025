@@ -1,4 +1,4 @@
-import CarFormComponent from "../components/CarsComponent/CarFormComponent.tsx";
+import CarFormComponent from "../components/CarsComponent/CarForms/CarFormComponent.tsx";
 
 const CarFormPage = () => {
     return (

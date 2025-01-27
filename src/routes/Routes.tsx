@@ -5,6 +5,7 @@ import {AppRoutes} from "./constants.ts";
 const Home = lazy(() => import('../pages/HomePage'))
 const Cars = lazy(() => import('../pages/CarsPage'))
 const CarForm = lazy(() => import('../pages/CarFormPage'))
+const CarById = lazy(() => import('../pages/CarByIdPage'))
 export const RoutersComponent = () =>
     useRoutes([
         {
@@ -29,7 +30,15 @@ export const RoutersComponent = () =>
                             <CarForm/>
                         </Suspense>
                     ),
-                    path: AppRoutes.carForm
+                    path: AppRoutes.carCreate
+                },
+                {
+                    element: (
+                        <Suspense>
+                            <CarById/>
+                        </Suspense>
+                    ),
+                    path: AppRoutes.carById
                 }
             ]
         }

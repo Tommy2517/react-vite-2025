@@ -8,7 +8,9 @@ const HomePage = () => {
             <br/>
             <Link className={'text-blue-300 font-bold'} to={AppRoutes.cars}>Show all cars</Link>
             <br/>
-            <Link className={'text-red-300 font-bold'} to={AppRoutes.carForm}>Create Car</Link>
+            <Link className={'text-red-300 font-bold'} to={AppRoutes.carCreate}>Create Car</Link>
+            <br/>
+            <Link className={'text-red-300 font-bold'} to={AppRoutes.carById}>Show one Car</Link>
             <br/>
             <Outlet/>
         </div>

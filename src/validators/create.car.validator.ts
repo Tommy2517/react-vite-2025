@@ -1,11 +1,12 @@
 import * as Joi from "joi";
 
-export const carValidator = Joi.object({
+export const createCarValidator = Joi.object({
     brand: Joi
         .string()
         .min(1)
         .max(20)
         .pattern(/^[a-zA-Zа-яА-яёЁіІїЇєЄҐґ]{1,20}$/)
+        .required()
         .messages({
             "string.empty": "Brand cannot be empty.",
             "string.min": "Brand must have at least 1 character.",
@@ -16,6 +17,7 @@ export const carValidator = Joi.object({
         .number()
         .min(0)
         .max(1000000)
+        .required()
         .messages({
             "number.base": "Price must be a number.",
             "number.min": "Price cannot be less than 0.",
@@ -25,6 +27,7 @@ export const carValidator = Joi.object({
         .number()
         .min(1990)
         .max(2025)
+        .required()
         .messages({
             "number.base": "Year must be a number.",
             "number.min": "Year cannot be earlier than 1990.",
