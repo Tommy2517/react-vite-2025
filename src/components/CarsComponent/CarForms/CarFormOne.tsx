@@ -1,10 +1,10 @@
 import {useForm} from "react-hook-form";
 import {joiResolver} from "@hookform/resolvers/joi";
 import {idCarValidator} from "../../../validators/id.car.validator.ts";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import CarComponent from "../CarComponent.tsx";
 import {getCarById} from "../../../services/car.service.ts";
-
+import './CarFormStyles.css'
 const CarFormOne = () => {
     const [car, setCar] = useState<ICar | null>(null)
     const {handleSubmit, register, formState: {isValid, errors}}
