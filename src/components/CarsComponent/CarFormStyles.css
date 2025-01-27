@@ -1,0 +1,11 @@
+form{
+    @apply flex flex-col gap-2
+}
+
+input{
+    @apply w-min border p-2 rounded-md
+}
+
+button{
+    @apply border-2 text-yellow-300 font-bold
+}
