@@ -2,16 +2,13 @@ import {useContext} from "react";
 import {ContextLevelOne} from "../context/ContextLevelOne.tsx";
 
 const HomePage = () => {
-    const {changeTheme,status} = useContext(ContextLevelOne)
-    const click = ()=>{
-        console.log('click')
-        changeTheme(status)
-    }
+    const {changeTheme} = useContext(ContextLevelOne)
+
     return (
 
         <div>
             <div>HomePage</div>
-            <button onClick={click}>click</button>
+            <button onClick={changeTheme}>click</button>
         </div>
     );
 };

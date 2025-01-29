@@ -1,14 +1,11 @@
 import {createContext} from "react";
 
-type LevelOneContextType = {
-    status:boolean
-    changeTheme: (obj:boolean) => void
+export type LevelOneContextType = {
+    changeTheme: () => void
 }
 
 const init = {
-    status:true,
-    changeTheme: (obj) => {
-        console.log(obj)
-    }
+    changeTheme: () => {}
 }
+
 export const ContextLevelOne = createContext<LevelOneContextType>(init)

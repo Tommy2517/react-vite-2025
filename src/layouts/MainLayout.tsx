@@ -4,21 +4,17 @@ import {useState} from "react";
 import {ContextLevelOne} from "../context/ContextLevelOne.tsx";
 import './mainLayout.scss'
 const MainLayout = () => {
-    const [theme, setTheme] = useState<boolean>(true);
-    const themeColor = () =>  theme ? 'dark': 'light'
-
+    const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
     return (
-        <div className={`h-screen ${themeColor()}`}>
+        <div className={`h-screen ${theme}`}>
             <ContextLevelOne.Provider value={
                 {
-                    status: theme,
-                    changeTheme: (status) => {
-                        setTheme(!status)
+                    changeTheme: () => {
+                        theme === 'light' ? setTheme('dark') : setTheme('light')
                     }
                 }
             }>
-
                 <Menu/>
                 <Outlet/>
             </ContextLevelOne.Provider>
