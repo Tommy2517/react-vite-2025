@@ -3,7 +3,7 @@ import useFetchDummy from "../../hooks/useFetchDummy.ts";
 import {IUser} from "../../models/IUser.ts";
 import User from "./User.tsx";
 import {useAppSelector} from "../../redux/hooks/useAppSelector.tsx";
-import {userSlice} from "../../redux/slices/userSlice/userSlice.ts";
+import {userSliceActions} from "../../redux/slices/userSlice/userSlice.ts";
 
 const Users = () => {
     const {users} = useAppSelector(({userSlice}) => userSlice)
@@ -11,7 +11,7 @@ const Users = () => {
     useFetchDummy<IBaseResponseModel & { users: IUser[] }>(
         'users',
         (state) => state.userSlice.users,
-        userSlice.actions.loadUsers
+        userSliceActions.loadUsers
     )
     return (
         <div>
