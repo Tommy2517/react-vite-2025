@@ -3,7 +3,7 @@ import './index.css'
 import {RouterProvider} from "react-router-dom";
 import {routes} from "./router/router.tsx";
 import {Provider, useSelector} from "react-redux";
-import {configureStore, createAction, createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {configureStore, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {IUser} from "./models/IUser.ts";
 import {IPost} from "./models/IPost.ts";
 /////////////////////////////////////////////////////////////////////
