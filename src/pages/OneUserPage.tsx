@@ -8,7 +8,7 @@ import {IUser} from "../models/IUser.ts";
 
 const OneUserPage = () => {
     const {id} = useParams();
-    const {user} = useAppSelector(({userSlice}) => userSlice);
+    const {user, loadState} = useAppSelector(({userSlice}) => userSlice);
     const dispatch = useAppDispatch();
     const location = (q) =>{
         dispatch(q(id))
@@ -29,6 +29,7 @@ const OneUserPage = () => {
 
     return (
         <div>
+            {!loadState && <div>Loading</div>}
             {user && <div>{user.id} {user.firstName}</div>}
 
         </div>

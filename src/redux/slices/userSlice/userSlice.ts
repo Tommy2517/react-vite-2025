@@ -1,13 +1,14 @@
 import {IUser} from "../../../models/IUser.ts";
-import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice, isFulfilled, PayloadAction} from "@reduxjs/toolkit";
 import {getAll} from "../../../services/api.service.ts";
 import {IBaseResponseModel} from "../../../models/IBaseResponseModel.ts";
 
 type UserSliceType = {
     users: IUser[],
-    user: IUser | null
+    user: IUser | null,
+    loadState: boolean
 }
-const usersInitialState: UserSliceType = {users: [], user: null}
+const usersInitialState: UserSliceType = {users: [], user: null, loadState:false}
 
 const loadUsers = createAsyncThunk(
     'usersSlice/loadUsers',
@@ -15,6 +16,7 @@ const loadUsers = createAsyncThunk(
         try {
             const users = await getAll<IBaseResponseModel & { users: IUser[] }>('users')
                 .then(({users}) => users)
+            thunkAPI.dispatch(userSliceActions.changeLoadState(true))
             //             dispatch(loadAction(data[path]))
             // throw new Error()
             return thunkAPI.fulfillWithValue(users)
@@ -31,6 +33,8 @@ const loadUser = createAsyncThunk(
         try {
             const user = await getAll<IUser>('users/' + id)
                 .then(user => user)
+            // thunkAPI.dispatch(userSliceActions.changeLoadState(true))
+
             //             dispatch(loadAction(data[path]))
             // throw new Error()
             return thunkAPI.fulfillWithValue(user)
@@ -56,12 +60,15 @@ export const userSlice = createSlice({
             .addCase(loadUser.rejected, (state, action) => {
                 console.log(state)
                 console.log(action)
+            })
+            .addMatcher(isFulfilled(loadUser,loadUsers), (state:UserSliceType )=>{
+                state.loadState = true
             }),
     initialState: usersInitialState,
     name: "userSlice",
     reducers: {
-        loadUser: (state, action) => {
-            // state.users = action.payload
+        changeLoadState: (state, action:PayloadAction<boolean>) => {
+            state.loadState = action.payload
         }
     }
 });
