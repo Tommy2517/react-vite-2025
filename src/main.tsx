@@ -3,29 +3,45 @@ import './index.css'
 import {RouterProvider} from "react-router-dom";
 import {routes} from "./router/router.tsx";
 import {Provider, useSelector} from "react-redux";
-import {configureStore, createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {configureStore, createAction, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {IUser} from "./models/IUser.ts";
+import {IPost} from "./models/IPost.ts";
+/////////////////////////////////////////////////////////////////////
+type PostSliceType = {
+    posts: IPost[]
+}
+
+const postsInitialState: PostSliceType = {posts: []}
+export const postSlice = createSlice({
+    name:'postSlice',
+    initialState:postsInitialState,
+    reducers:{
+        loadPosts: (state,action:PayloadAction<IPost[]>) =>{
+            state.posts = action.payload
+        }
+    }
+})
+/////////////////////////////////////////////////////////////////////
 
 type UserSliceType = {
     users: IUser[]
 }
-
-const initialState: UserSliceType = {users: []}
-
-const userSlice = createSlice({
+const usersInitialState: UserSliceType = {users: []}
+export const userSlice = createSlice({
     name: "userSlice",
-    initialState: initialState,
+    initialState: usersInitialState,
     reducers: {
         loadUsers: (state, action: PayloadAction<IUser[]>) => {
             state.users = action.payload
         }
     }
 });
+/////////////////////////////////////////////////////////////////////
 
 const store = configureStore({
     reducer: {
         userSlice: userSlice.reducer,
-        // postsSlice: null
+        postSlice: postSlice.reducer
     }
 });
 

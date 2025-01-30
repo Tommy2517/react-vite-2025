@@ -1,13 +1,20 @@
-import Post from "./Post.tsx";
+import {IBaseResponseModel} from "../../models/IBaseResponseModel.ts";
+import {useAppSelector, postSlice} from "../../main.tsx";
 import useFetchDummy from "../../hooks/useFetchDummy.ts";
 import {IPost} from "../../models/IPost.ts";
-import {IBaseResponseModel} from "../../models/IBaseResponseModel.ts";
+import Post from "./Post.tsx";
 
 const Posts = () => {
-    const {data} = useFetchDummy<IBaseResponseModel & { posts: IPost[] }>('posts')
+    const {posts} = useAppSelector(({postSlice}) => postSlice)
+
+    useFetchDummy<IBaseResponseModel & { posts: IPost[] }>(
+        'posts',
+        (state) => state.postSlice.posts,
+        postSlice.actions.loadPosts
+    )
     return (
         <div>
-            {data?.posts.map(post => <Post key={post.id} post={post}/>)}
+            {posts.map((post: IPost) => <Post key={post.id} post={post}/>)}
         </div>
     );
 };
