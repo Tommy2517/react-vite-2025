@@ -1,9 +1,11 @@
 import {useEffect, useState} from "react";
 import {getAll} from "../services/api.service.ts";
+import {useDispatch} from "react-redux";
 
 
  const useFetchDummy = <T,>(path) => {
     const [data, setData] = useState<T | null>(null)
+
 
         useEffect(() => {
             getAll<T>(path)

@@ -13,6 +13,9 @@ const MenuComponent = () => {
             <li className={btnParentStyle}>
                 <Link className={btnChildStyle} to={'posts'}>posts</Link>
             </li>
+            <li className={btnParentStyle}>
+                <Link className={btnChildStyle} to={'/'}>home</Link>
+            </li>
         </ul>
     );
 };
