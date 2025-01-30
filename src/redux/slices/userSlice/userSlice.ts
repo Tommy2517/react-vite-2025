@@ -1,5 +1,5 @@
 import {IUser} from "../../../models/IUser.ts";
-import {createAsyncThunk, createSlice, isFulfilled, PayloadAction} from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice, isFulfilled, isRejected, PayloadAction} from "@reduxjs/toolkit";
 import {getAll} from "../../../services/api.service.ts";
 import {IBaseResponseModel} from "../../../models/IBaseResponseModel.ts";
 
@@ -63,6 +63,9 @@ export const userSlice = createSlice({
             })
             .addMatcher(isFulfilled(loadUser,loadUsers), (state:UserSliceType )=>{
                 state.loadState = true
+            })
+            .addMatcher(isRejected(loadUser,loadUsers), (state)=>{
+                console.log(state)
             }),
     initialState: usersInitialState,
     name: "userSlice",
