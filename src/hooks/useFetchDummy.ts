@@ -3,13 +3,14 @@ import {useAppSelector} from "../redux/hooks/useAppSelector.tsx";
 import {useAppDispatch} from "../redux/hooks/useAppDispatch.tsx";
 
 
-const useFetchDummy = <T, >(path, selector, loadAction) => {
+const useFetchDummy = <T, >(path, selector, loadAction, id) => {
     const dispatch = useAppDispatch();
     const data = useAppSelector(selector)
     useEffect(() => {
-        if (!data.length) {
+        // console.log(data.length)
+        if (!data || !data.length) {
             console.log('reload')
-                    dispatch(loadAction())
+                    dispatch(loadAction(id && id))
         }
     }, [])
 };

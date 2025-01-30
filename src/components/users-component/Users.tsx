@@ -4,6 +4,7 @@ import {IUser} from "../../models/IUser.ts";
 import User from "./User.tsx";
 import {useAppSelector} from "../../redux/hooks/useAppSelector.tsx";
 import {userSliceActions} from "../../redux/slices/userSlice/userSlice.ts";
+import {useAppDispatch} from "../../redux/hooks/useAppDispatch.tsx";
 
 const Users = () => {
     const {users} = useAppSelector(({userSlice}) => userSlice)
