@@ -1,8 +1,9 @@
 import {IBaseResponseModel} from "../../models/IBaseResponseModel.ts";
-import {useAppSelector, userSlice} from "../../main.tsx";
 import useFetchDummy from "../../hooks/useFetchDummy.ts";
 import {IUser} from "../../models/IUser.ts";
 import User from "./User.tsx";
+import {useAppSelector} from "../../redux/hooks/useAppSelector.tsx";
+import {userSlice} from "../../redux/slices/userSlice/userSlice.ts";
 
 const Users = () => {
     const {users} = useAppSelector(({userSlice}) => userSlice)

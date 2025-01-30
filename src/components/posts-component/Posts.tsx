@@ -1,8 +1,9 @@
 import {IBaseResponseModel} from "../../models/IBaseResponseModel.ts";
-import {useAppSelector, postSlice} from "../../main.tsx";
 import useFetchDummy from "../../hooks/useFetchDummy.ts";
 import {IPost} from "../../models/IPost.ts";
 import Post from "./Post.tsx";
+import {useAppSelector} from "../../redux/hooks/useAppSelector.tsx";
+import {postSlice} from "../../redux/slices/postSlice/postSlice.ts";
 
 const Posts = () => {
     const {posts} = useAppSelector(({postSlice}) => postSlice)

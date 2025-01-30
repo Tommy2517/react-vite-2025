@@ -1,12 +1,11 @@
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import {getAll} from "../services/api.service.ts";
-import {useDispatch, useSelector} from "react-redux";
-import {useAppSelector, userSlice} from "../main.tsx";
-import users from "../components/users-component/Users.tsx";
+import {useAppSelector} from "../redux/hooks/useAppSelector.tsx";
+import {useAppDispatch} from "../redux/hooks/useAppDispatch.tsx";
 
 
 const useFetchDummy = <T, >(path, selector, loadAction) => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const data = useAppSelector(selector)
     useEffect(() => {
         if (!data.length) {
